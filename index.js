@@ -1,9 +1,9 @@
 var express 	= require('express');
-var http 		= require('http');
+var http 	= require('http');
 var bodyParser 	= require('body-parser');
-var logger 		= require('morgan');
+var logger 	= require('morgan');
 var mongoose 	= require('mongoose');
-var pasties		= require('./router/apirouter');
+var pasties	= require('./router/apirouter');
 
 // BASE SETUP
 // =============================================================================
@@ -26,7 +26,7 @@ app.use(function(req, res, next) {
 // =============================================================================
 
 //Connect to our database.
-mongoose.connect('mongodb://gdati:pochacco123@ds061246.mlab.com:61246/ajaxlab');
+mongoose.connect('mongodb://<user>:<userpassword>3@localhost:27017/ajaxlab');
 
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
